@@ -75,6 +75,7 @@ public:
 #endif
   Adafruit_VC0706(HardwareSerial *ser); // Constructor when using HardwareSerial
   boolean begin(uint32_t baud = 38400);
+  boolean end();
   boolean reset(void);
   boolean TVon(void);
   boolean TVoff(void);

@@ -68,6 +68,18 @@ boolean Adafruit_VC0706::begin(uint32_t baud) {
   return reset();
 }
 
+boolean Adafruit_VC0706::end()
+{
+#if defined(__AVR__) || defined(ESP8266)
+  if (swSerial)
+    swSerial->end();
+  else
+#endif
+    hwSerial->end();
+  return true;
+}
+
+
 /**************************************************************************/
 /*!
     @brief  Soft reset the camera
